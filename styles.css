@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+}
+.container{
+    margin: auto;
+}
+
+.mixed-cards{
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 150px;
+    border: 4px dashed transparent;
+    margin: auto;
+    display: flex;
+}
+
+.card{
+    margin: 14px;
+}
+
+.card > img {
+    display: block;
+    width: 200px;
+    box-shadow: 0 0 0 8px #86989B;
+}
