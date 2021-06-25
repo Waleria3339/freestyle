@@ -1,5 +1,20 @@
+body
+{
+	margin: 0;
+	background-color: #9ea6bf;
+	color: #209781;
+    /*font-family: 'Lobster', sans-serif;*/
+    font-size: 28px;
+}
+
 h1{
     text-align: center;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
 }
 .container{
     margin: auto;
@@ -24,3 +39,11 @@ h1{
     width: 200px;
     box-shadow: 0 0 0 8px #86989B;
 }
+
+
+
+
+/*a:link    { color: #209781; text-decoration: none; }*/
+/*a:visited { color: #209781; }*/
+/*a:active  { color: #209781; }*/
+/*a:hover   { color: #E9B64A; }*/
