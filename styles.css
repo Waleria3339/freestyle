@@ -1,49 +1,75 @@
 body
 {
-	margin: 0;
+	margin: auto;
 	background-color: #9ea6bf;
-	color: #209781;
-    /*font-family: 'Lobster', sans-serif;*/
+	color: #2B2607FF;
+    /* font-family: styl tekstu */
+    font-family: "Old English Text MT", serif;
+    /* font-size: Rozmiar tekstu */
     font-size: 28px;
 }
+
+/* kolor jak w tekście w 'body' oprócz 'hover'*/
+a:link{color: #2B2607FF; text-decoration: none}
+a:visited{color: #2B2607FF}
+a:active{color: #2B2607FF}
+a:hover{color: #5700b6}
 
 h1{
     text-align: center;
     font-size: 64px;
     font-weight: 400;
+    /* letter-spacing: spacji między literami */
     letter-spacing: 5px;
+    /* margin-top: pole przed elementem */
     margin-top: 20px;
-    margin-bottom: 100px;
-
-}
-.container{
-    margin: auto;
+    /* margin-bottom: pole po elemencie */
+    margin-bottom: 0;
 }
 
-.mixed-cards{
-    max-width: 1000px;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-height: 150px;
-    border: 4px dashed transparent;
-    margin: auto;
-    display: flex;
+p{
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.board{
+    /*  width: w zależności od rozmiarów obrazków, odstępów, marginów */
+    width: 600px;
+    /* margin-left i margin-right: wycentrowanie od ustawionego powyżej - width (600px) */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .card{
-    margin: 14px;
+    width: 120px;
+    height: 120px;
+    /* display: inline-block: wyświetlenie blokami w linijce*/
+    display: inline-block;
+    margin: 3px;
+    background-image: url("images/background.jpg");
+    /* border: rozmiar, typ i kolor borderu */
+    border: 3px solid #181604;
+    border-radius: 6px;
+    /* typ kursoru (łapka) */
+    cursor: pointer;
+    /* opacity: poziom krycia*/
+    opacity: 70%;
+    /*filter: brightness(90%);*/
+    /* transition: wszystko w card (nie tylko border), 3 sekundy, przy najechaniu i wyjechaniu*/
+    transition: all .3s ease-in-out;
+
 }
 
-.card > img {
-    display: block;
-    width: 200px;
-    box-shadow: 0 0 0 8px #86989B;
+.card:hover{
+    border: 3px solid #f6d915;
+    opacity: 100%;
+    /*filter: brightness(90%);   */
 }
 
-
-
-
-/*a:link    { color: #209781; text-decoration: none; }*/
-/*a:visited { color: #209781; }*/
-/*a:active  { color: #209781; }*/
-/*a:hover   { color: #E9B64A; }*/
+.score{
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
