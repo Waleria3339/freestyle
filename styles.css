@@ -42,7 +42,24 @@ p{
     margin-right: auto;
     text-align: center;
 }
-
+.cardActive{
+    width: 120px;
+    height: 120px;
+    /* display: inline-block: wyświetlenie blokami w linijce*/
+    display: inline-block;
+    margin: 3px;
+    background-image: url("images/background.jpg");
+    /* border: rozmiar, typ i kolor borderu */
+    border: 3px solid #f6d915;
+    border-radius: 6px;
+    /* typ kursoru (zwykła strałka) */
+    cursor: default;
+    /* opacity: poziom krycia*/
+    /*opacity: 70%;*/
+    filter: brightness(100%);
+    /* transition: wszystko w card (nie tylko border), 3 sekundy, przy najechaniu i wyjechaniu*/
+    transition: all .3s ease-in-out;
+}
 .card{
     width: 120px;
     height: 120px;
@@ -56,20 +73,22 @@ p{
     /* typ kursoru (łapka) */
     cursor: pointer;
     /* opacity: poziom krycia*/
-    opacity: 70%;
-    /*filter: brightness(90%);*/
+    /*opacity: 70%;*/
+    filter: brightness(90%);
     /* transition: wszystko w card (nie tylko border), 3 sekundy, przy najechaniu i wyjechaniu*/
     transition: all .3s ease-in-out;
-
 }
 
 .card:hover{
     border: 3px solid #f6d915;
-    opacity: 100%;
-    /*filter: brightness(90%);   */
+    /*opacity: 100%;*/
+    filter: brightness(100%);
 }
+
+
 
 .score{
     margin-top: 5px;
     letter-spacing: 2px;
 }
+
