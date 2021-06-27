@@ -1,13 +1,19 @@
 initGame();
 
 function initGame() {
-    //TODO shuffle cards
-    //TODO countries cards
-    //TODO type of cards (countries, actors..)
+    //TODO countries cards - checking
+
+    //TODO type of cards (countries, food, programming) AND category choosing
+
     //TODO two click in one card = should nothing happened
+    //TODO timer
+
     //TODO play again
     //TODO refresh button
-    cards = getCards();
+    //TODO Win-screen
+
+    let cardsList = getCards();
+    cards = shuffleCards(cardsList)
     cardsBoarding();
     counterBoarding();
 
@@ -21,17 +27,21 @@ let pairCards = 6;
 
 
 function getCards(){
-    return ["butterfly.png", "butterflyEggs.png", "caterpillar.png", "frog.png", "frogEggs.png", "tadpole.png", "butterfly.png", "butterflyEggs.png", "caterpillar.png", "frog.png", "frogEggs.png", "tadpole.png"]
+    return ["pl_australia.png", "chiny.png", "peru.png", "pl_francja.png", "usa.png", "brazylia.png", "pl_niemcy.png", "francja.png", "pl_usa_2.png", "australia.png", "pl_brytania.png", "pl_chiny.png", "pl_peru.png", "pl_brazylia.png",  "wlochy.png", "wielka brytania.png", "pl_wlochy.png", "niemcy.png"]
+}
+
+function shuffleCards(cardsList){
+    return cardsList.sort(() => Math.random() - 0.5)
 }
 
 function cardsBoarding(){
-    let board = document.getElementById('board_id');
+    let board = document.getElementById('section');
     for (let i = 0; i < cards.length; i++) {
         // console.log(cards[i])
         document.addEventListener('DOMContentLoaded', function () {
             let cardDiv = document.createElement('div');
             cardDiv.id = "card" + i;
-            cardDiv.className = 'card';
+            cardDiv.className = 'memory-card';
             board.appendChild(cardDiv);
             clickCard(i)
         })
@@ -39,7 +49,7 @@ function cardsBoarding(){
 }
 
 function counterBoarding(){
-    let board = document.getElementById('board_id')
+    let board = document.getElementById('section')
     document.addEventListener('DOMContentLoaded', function (){
         let counterDiv = document.createElement('div');
         counterDiv.className = 'score';
@@ -105,11 +115,11 @@ function hideCards(actualCardNumber, visibleCardNumber){
 
 // przewracanie kart
 function restoreCards(actualCardNumber, visibleCardNumber){
-    $('#card' + actualCardNumber).css('background-image', 'url(images/background.jpg)');
+    $('#card' + actualCardNumber).css('background-image', 'url(images/background.png)');
     $('#card' + actualCardNumber).addClass('card');
     $('#card' + actualCardNumber).removeClass('cardActive');
 
-    $('#card' + visibleCardNumber).css('background-image', 'url(images/background.jpg)');
+    $('#card' + visibleCardNumber).css('background-image', 'url(images/background.png)');
     $('#card' + visibleCardNumber).addClass('card');
     $('#card' + visibleCardNumber).removeClass('cardActive');
     // usuwanie blokady
