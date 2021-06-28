@@ -23,11 +23,11 @@ let firstVisibleCard = false;
 let turnCounter = 0;
 let visibleCardNumber = 0;
 let lockCards = false;
-let pairCards = 6;
+let pairCards = cards.length / 2;
 
 
 function getCards(){
-    return ["pl_australia.png", "chiny.png", "peru.png", "pl_francja.png", "usa.png", "brazylia.png", "pl_niemcy.png", "francja.png", "pl_usa_2.png", "australia.png", "pl_brytania.png", "pl_chiny.png", "pl_peru.png", "pl_brazylia.png",  "wlochy.png", "wielka brytania.png", "pl_wlochy.png", "niemcy.png"]
+    return ["australia.png", "brazil.png", "britain.png", "china.png", "france.png", "germany.png", "italy.png", "peru.png", "usa.png", "pair_australia.png", "pair_brazil.png", "pair_britain.png", "pair_china.png", "pair_france.png",  "pair_germany.png", "pair_italy.png", "pair_peru.png", "pair_usa.png"]
 }
 
 function shuffleCards(cardsList){
@@ -89,7 +89,7 @@ function checkFirstCard(cardNumber){
 }
 
 function checkSecondCard(cardNumber){
-    if (cards[cardNumber] === cards[visibleCardNumber]){
+    if (cards[cardNumber].split('_')[1] === cards[visibleCardNumber] || cards[cardNumber] === cards[visibleCardNumber].split('_')[1]){
         setTimeout(function () { hideCards(cardNumber, visibleCardNumber) }, 750);
     } else {
         setTimeout(function () { restoreCards(cardNumber, visibleCardNumber) }, 1000);
