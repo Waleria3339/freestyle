@@ -72,7 +72,7 @@ function revealCard(cardNumber){
         // first card
         if (firstVisibleCard === false) { checkFirstCard(cardNumber) }
         // second card
-        else if(cardNumber == visibleCardNumber){ restoreCard(cardNumber) }
+        else if(cardNumber == visibleCardNumber){ checkingTwoClicksInOneCard(cardNumber) }
         else { if(cardNumber != visibleCardNumber){ checkSecondCard(cardNumber) }}
     }
 }
@@ -116,8 +116,10 @@ function restoreCards(actualCardNumber, visibleCardNumber){
     lockCards = false;
 }
 
-function restoreCard(cardNumber){
+function checkingTwoClicksInOneCard(cardNumber){
     $('#card' + cardNumber).css('background-image', 'url(images/background.png)');
     firstVisibleCard = false;
     lockCards = false;
+    turnCounter ++;
+    $('.score').html('Turn counter: ' + turnCounter);
 }
