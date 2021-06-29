@@ -1,8 +1,6 @@
 initGame();
 
 function initGame() {
-    //TODO countries cards - checking
-
     //TODO type of cards (countries, food, programming) AND category choosing
 
     //TODO two click in one card = should nothing happened
@@ -69,12 +67,8 @@ function revealCard(cardNumber){
     let image = "url(images/" + cards[cardNumber] + ")";
     if (opacityValue != 0 && lockCards === false){
         lockCards = true;
-
         // Odtwarzanie karty
         $('#card' + cardNumber).css('background-image', image);
-        $('#card' + cardNumber).addClass('cardActive');
-        $('#card' + cardNumber).removeClass('card');
-
         // first card
         if (firstVisibleCard === false) { checkFirstCard(cardNumber) }
         // second card
@@ -99,7 +93,6 @@ function checkSecondCard(cardNumber){
     firstVisibleCard = false;
 }
 
-
 // usuwanie kart
 function hideCards(actualCardNumber, visibleCardNumber){
     // widoczność obu kart na bordzie zmniejszamy do zera
@@ -116,12 +109,7 @@ function hideCards(actualCardNumber, visibleCardNumber){
 // przewracanie kart
 function restoreCards(actualCardNumber, visibleCardNumber){
     $('#card' + actualCardNumber).css('background-image', 'url(images/background.png)');
-    $('#card' + actualCardNumber).addClass('card');
-    $('#card' + actualCardNumber).removeClass('cardActive');
-
     $('#card' + visibleCardNumber).css('background-image', 'url(images/background.png)');
-    $('#card' + visibleCardNumber).addClass('card');
-    $('#card' + visibleCardNumber).removeClass('cardActive');
     // usuwanie blokady
     lockCards = false;
 }
