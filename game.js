@@ -72,7 +72,8 @@ function revealCard(cardNumber){
         // first card
         if (firstVisibleCard === false) { checkFirstCard(cardNumber) }
         // second card
-        else { checkSecondCard(cardNumber) }
+        else if(cardNumber == visibleCardNumber){ restoreCard(cardNumber) }
+        else { if(cardNumber != visibleCardNumber){ checkSecondCard(cardNumber) }}
     }
 }
 
@@ -83,7 +84,8 @@ function checkFirstCard(cardNumber){
 }
 
 function checkSecondCard(cardNumber){
-    if (cards[cardNumber].split('_')[1] === cards[visibleCardNumber] || cards[cardNumber] === cards[visibleCardNumber].split('_')[1]){
+    if (cards[visibleCardNumber] === cards[cardNumber].split('_')[1] ||
+        cards[cardNumber] === cards[visibleCardNumber].split('_')[1]) {
         setTimeout(function () { hideCards(cardNumber, visibleCardNumber) }, 750);
     } else {
         setTimeout(function () { restoreCards(cardNumber, visibleCardNumber) }, 1000);
@@ -111,5 +113,11 @@ function restoreCards(actualCardNumber, visibleCardNumber){
     $('#card' + actualCardNumber).css('background-image', 'url(images/background.png)');
     $('#card' + visibleCardNumber).css('background-image', 'url(images/background.png)');
     // usuwanie blokady
+    lockCards = false;
+}
+
+function restoreCard(cardNumber){
+    $('#card' + cardNumber).css('background-image', 'url(images/background.png)');
+    firstVisibleCard = false;
     lockCards = false;
 }
