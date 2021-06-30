@@ -3,9 +3,6 @@ initGame();
 function initGame() {
     //TODO type of cards (countries, food, programming) AND category choosing
 
-    //TODO two click in one card = should nothing happened
-    //TODO timer
-
     //TODO play again
     //TODO refresh button
     //TODO Win-screen
@@ -14,7 +11,6 @@ function initGame() {
     cards = shuffleCards(cardsList)
     cardsBoarding();
     counterBoarding();
-
 }
 // Nie mogę wstawić firstVisibleCard i turnCounter w funkcję, bo wtedy nie działa...
 let firstVisibleCard = false;
@@ -22,10 +18,12 @@ let turnCounter = 0;
 let visibleCardNumber = 0;
 let lockCards = false;
 let pairCards = cards.length / 2;
-
+let timerStarted = false;
+let sec = 0;
 
 function getCards(){
-    return ["australia.png", "brazil.png", "britain.png", "china.png", "france.png", "germany.png", "italy.png", "peru.png", "usa.png", "pair_australia.png", "pair_brazil.png", "pair_britain.png", "pair_china.png", "pair_france.png",  "pair_germany.png", "pair_italy.png", "pair_peru.png", "pair_usa.png"]
+    return ["peru.png", "usa.png", "pair_peru.png", "pair_usa.png"]
+    // return ["australia.png", "brazil.png", "britain.png", "china.png", "france.png", "germany.png", "italy.png", "peru.png", "usa.png", "pair_australia.png", "pair_brazil.png", "pair_britain.png", "pair_china.png", "pair_france.png",  "pair_germany.png", "pair_italy.png", "pair_peru.png", "pair_usa.png"]
 }
 
 function shuffleCards(cardsList){
@@ -47,7 +45,7 @@ function cardsBoarding(){
 }
 
 function counterBoarding(){
-    let board = document.getElementById('section')
+    let board = document.getElementById('counter')
     document.addEventListener('DOMContentLoaded', function (){
         let counterDiv = document.createElement('div');
         counterDiv.className = 'score';
@@ -59,6 +57,7 @@ function counterBoarding(){
 function clickCard(cardNumber){
     let card = document.getElementById('card' + cardNumber)
     card.addEventListener('click', function () { revealCard(cardNumber) })
+    card.addEventListener('click', startTimer);
 }
 
 function revealCard(cardNumber){
@@ -72,7 +71,7 @@ function revealCard(cardNumber){
         // first card
         if (firstVisibleCard === false) { checkFirstCard(cardNumber) }
         // second card
-        else if(cardNumber == visibleCardNumber){ checkingTwoClicksInOneCard(cardNumber) }
+        else if(cardNumber === visibleCardNumber){ checkingTwoClicksInOneCard(cardNumber) }
         else { if(cardNumber != visibleCardNumber){ checkSecondCard(cardNumber) }}
     }
 }
@@ -103,7 +102,7 @@ function hideCards(actualCardNumber, visibleCardNumber){
     // zmniejszamy ilość nieodkrytych kart o 1
     pairCards--;
     // sprawdzanie wygranej
-    if(pairCards === 0){ $('.board').html('<h1>Congratulations! <br> You win! <br> Done in ' + turnCounter + ' turns<h1>') }
+    if(pairCards === 0){ $('.board').html('<h1>Congratulations! <br> You win! <br> Done in ' + turnCounter + ' turns<h1>'); clearInterval(timer) }
     // usuwanie blokady
     lockCards = false;
 }
@@ -122,4 +121,15 @@ function checkingTwoClicksInOneCard(cardNumber){
     lockCards = false;
     turnCounter ++;
     $('.score').html('Turn counter: ' + turnCounter);
+}
+
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+function startTimer(){
+    if (!timerStarted){
+        timer = setInterval( function(){
+            document.getElementById("seconds").innerHTML=pad(++sec%60);
+            document.getElementById("minutes").innerHTML="Time: " + pad(parseInt(sec/60,10)) + ":";
+        }, 1000);
+            timerStarted = true
+    }
 }
