@@ -1,11 +1,10 @@
 initGame();
 
 function initGame() {
-    //TODO type of cards (countries, food, programming) AND category choosing
+    //TODO category choosing
 
     //TODO play again
     //TODO refresh button
-    //TODO Win-screen
 
     let cardsList = getCards();
     cards = shuffleCards(cardsList)
@@ -23,6 +22,8 @@ let sec = 0;
 
 function getCards(){
     return ["peru.png", "usa.png", "pair_peru.png", "pair_usa.png"]
+    // return ["7.png", "8.png", "15.png", "20.png", "24.png", "35.png", "44.png", "47.png", "64.png", "pair_7.png", "pair_8.png", "pair_15.png", "pair_20.png", "pair_24.png", "pair_35.png", "pair_44.png", "pair_47.png", "pair_64.png" ]
+    // return ["aquarius.png", "aries.png", "cancer.png", "capricornus.png", "leo.png", "libra.png", "pair_aquarius.png", "pair_aries.png", "pair_cancer.png", "pair_capricornus.png", "pair_leo.png", "pair_libra.png", "pair_pisces.png", "pair_sagittarius.png", "pair_scorpius.png", "pisces.png", "sagittarius.png", "scorpius.png"]
     // return ["australia.png", "brazil.png", "britain.png", "china.png", "france.png", "germany.png", "italy.png", "peru.png", "usa.png", "pair_australia.png", "pair_brazil.png", "pair_britain.png", "pair_china.png", "pair_france.png",  "pair_germany.png", "pair_italy.png", "pair_peru.png", "pair_usa.png"]
 }
 
@@ -102,7 +103,8 @@ function hideCards(actualCardNumber, visibleCardNumber){
     // zmniejszamy ilość nieodkrytych kart o 1
     pairCards--;
     // sprawdzanie wygranej
-    if(pairCards === 0){ $('.board').html('<h1>Congratulations! <br> You win! <br> Done in ' + turnCounter + ' turns<h1>'); clearInterval(timer) }
+    // if(pairCards === 0){ $('.board').html('<h1>Congratulations! <br> You win! <br> Done in ' + turnCounter + ' turns<h1>'); clearInterval(timer) }
+    if(pairCards === 0){ winScreen() }
     // usuwanie blokady
     lockCards = false;
 }
@@ -132,4 +134,11 @@ function startTimer(){
         }, 1000);
             timerStarted = true
     }
+}
+
+function winScreen() {
+    clearInterval(timer);
+    $('.board').html('<h1>Congratulations! <br> You win! <br> Done in ' + turnCounter + ' turns<h1>');
+    $('.board').addClass('animation')
+    $('.board').removeClass('board')
 }
