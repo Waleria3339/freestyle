@@ -1,7 +1,15 @@
-initGame();
+ const cards = document.querySelectorAll('.memory-card');
 
-function initGame() {
+ let hasFlippedCard = false;
+ let firstCard, secondCard;
 
-    // Your game can start here, but define separate functions, don't write everything in here :)
+  function flipCard() {
+   this.classList.add('flip');
 
-}
+   if (!hasFlippedCard) {
+     hasFlippedCard = true;
+     firstCard = this;
+   }
+  }
+
+cards.forEach(card => card.addEventListener('click', flipCard));

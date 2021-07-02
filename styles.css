@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+  margin-top: 20px;
+  letter-spacing: 5px;
+}
+
+p {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: teal;
+  font-family: 'Lobster', sans-serif;
+  color: whitesmoke;
+}
+
+.memory-game {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 20px rgb(247, 249, 250);
+  transform-style: preserve-3d;
+  transition: all .3s ease-in-out;
+}
+
+.memory-card:hover
+{
+  border: 4px solid whitesmoke;
+}
+
+.score
+{
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.memory-card:active{
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
