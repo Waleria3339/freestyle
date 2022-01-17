@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Javascript Game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp:subset=latin-ext" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="constellations.js" defer></script>
 </head>
+
 <body>
-$END$
+<header>
+    <h1>Memory Quiz</h1>
+    <p><a href="http://www.google.pl/intl/pl/sky/" target="_blank">You can play and learn the map of the star sky</a></p>
+    <div class="board" id="board">
+        <section class="memory-game" id="section"></section>
+          </div>
+    <div id="counter"></div>
+    <div style="text-align: center; letter-spacing: 4px">
+        <h2><span id="minutes"></span><span id="seconds"></span></h2>
+    </div>
+</header>
 </body>
 </html>

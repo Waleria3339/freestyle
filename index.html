@@ -3,31 +3,33 @@
 <head>
     <title>Javascript Game</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&amp:subset=latin-ext" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="../game.js" defer></script>
+    <script src="game.js" defer></script>
 </head>
+
 
 <body>
 <header>
-    <h1>World Memory Game</h1>
-    <p><a href="https://earth.google.com/" target="_blank">You can play and plan your vacations</a></p>
+    <h1>Memory Quiz</h1>
+
     <div class="board" id="board">
+        <div class="categoryFrame" id="category">
+            <p>Choose a category</p>
+            <div class="buttonPosition">
+                <div class="category">Geometry
+                    <a href="triangles.html"><img src="images/geometry.png" alt="Geometry"></a>
+                </div>
+                <div class="category">Countries
+                   <a href="country.html"><img src="images/countries.png" alt="Countries"></a>
+                </div>
+                <div class="category">Zodiac
+                    <a href="constellations.html"><img src="images/zodiac.png" alt="Zodiac"></a>
+                </div>
+            </div>
+        </div>
         <section class="memory-game" id="section"></section>
-
-    <article>
-        <a href="country.html">
-            <button>Play!</button>
-        </a><br>
-        <a href="constellations.html">
-            <button>Rules</button>
-        </a><br>
-        <a href="triangles.html">
-            <button>Ranking</button>
-        </a><br>
-    </article>
-
     </div>
     <div id="counter"></div>
     <div style="text-align: center; letter-spacing: 4px">

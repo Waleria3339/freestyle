@@ -19,8 +19,35 @@ p {
   letter-spacing: 2px;
 }
 
+
+.categoryFrame{
+  position: center;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 5px;
+  box-shadow: 3px 3px 20px rgb(247, 249, 250);
+  min-height: 500px;
+
+}
+
+.category{
+  width: 280px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 20px;
+  float: left;
+  border: 2px solid whitesmoke;
+  cursor: pointer;
+}
+
+.category:hover{
+  box-shadow: 3px 3px 20px rgb(247, 249, 250);
+}
+
+
 a{ text-decoration: none; color: white; }
-a:hover{ color: indigo; }
+a:hover{ color: goldenrod; }
 
 body {
   height: 100vh;
@@ -45,7 +72,7 @@ body {
 
 }
 
-.memory-card {
+.memory-card-country {
   width: 125px;
   height: 125px;
   margin: 10px;
@@ -54,11 +81,45 @@ body {
   cursor: pointer;
   box-shadow: 3px 3px 20px rgb(247, 249, 250);
   transition: all .2s ease-in-out;
+  transform-style: preserve-3d;
   background-image: url("images/background.png");
-
 }
 
-.memory-card:hover
+.memory-card-country:hover
+{
+  border: 4px solid whitesmoke;
+}
+
+.memory-card-constellations{
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 20px rgb(247, 249, 250);
+  transition: all .2s ease-in-out;
+  background-image: url("images/background_4.png");
+}
+
+.memory-card-constellations:hover
+{
+  border: 4px solid whitesmoke;
+}
+
+.memory-card-triangles {
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 20px rgb(247, 249, 250);
+  transition: all .2s ease-in-out;
+  background-image: url("images/background_5.png");
+}
+
+.memory-card-triangles:hover
 {
   border: 4px solid whitesmoke;
 }
@@ -81,11 +142,11 @@ body {
 
 }
 @keyframes example {
-  0%   {color: black; left:0; top:0;}
+  0%   {color: goldenrod; left:0; top:0;}
   25%  {color: gray; left:100px; top:0;}
   50%  {color: lightgrey; left:0; top:0;}
   75%  {color: gray; left:-100px; top:0;}
-  100% {color: black; left:0; top:0;}
+  100% {color: goldenrod; left:0; top:0;}
 }
 
 .board{
