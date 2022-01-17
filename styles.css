@@ -1,9 +1,7 @@
 * {
   padding: 0;
-  margin: 0;
   box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto
+  margin: 0 auto;
 }
 
 h1 {
@@ -21,20 +19,30 @@ p {
   letter-spacing: 2px;
 }
 
+a{ text-decoration: none; color: white; }
+a:hover{ color: indigo; }
+
 body {
   height: 100vh;
   display: flex;
   background: teal;
-  font-family: 'Lobster', sans-serif;
+  font-family: Lobster, sans-serif;
   color: whitesmoke;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .memory-game {
-  width: 900px;
-  margin: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   perspective: 1000px;
+
 }
 
 .memory-card {
@@ -45,8 +53,9 @@ body {
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 3px 3px 20px rgb(247, 249, 250);
-  transform-style: preserve-3d;
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-image: url("images/background.png");
+
 }
 
 .memory-card:hover
@@ -61,26 +70,160 @@ body {
   font-size: 30px;
   text-align: center;
 }
+.animation{
+  height: 500px;
+  width: 900px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 
-.memory-card:active{
-    transform: scale(0.95);
-    transition: transform 0.2s;
+}
+@keyframes example {
+  0%   {color: black; left:0; top:0;}
+  25%  {color: gray; left:100px; top:0;}
+  50%  {color: lightgrey; left:0; top:0;}
+  75%  {color: gray; left:-100px; top:0;}
+  100% {color: black; left:0; top:0;}
 }
 
-.memory-card.flip {
-  transform: rotateY(180deg);
+.board{
+  height: 500px;
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.front-face,
-.back-face {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  position: absolute;
-  border-radius: 5px;
-  backface-visibility: hidden;
-}
 
-.front-face {
-  transform: rotateY(180deg);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*body*/
+/*{*/
+/*	margin: auto;*/
+/*	background-color: #9ea6bf;*/
+/*	color: #2B2607FF;*/
+/*    !* font-family: styl tekstu *!*/
+/*    font-family: Ubuntu, serif;*/
+/*    !* font-size: Rozmiar tekstu *!*/
+/*    font-size: 28px;*/
+/*}*/
+
+/*!* kolor jak w tekście w 'body' oprócz 'hover'*!*/
+/*a:link{color: #2B2607FF; text-decoration: none}*/
+/*a:visited{color: #2B2607FF}*/
+/*a:active{color: #2B2607FF}*/
+/*a:hover{color: #5700b6}*/
+
+/*h1{*/
+/*    text-align: center;*/
+/*    font-size: 64px;*/
+/*    font-weight: 400;*/
+/*    !* letter-spacing: spacji między literami *!*/
+/*    letter-spacing: 5px;*/
+/*    !* margin-top: pole przed elementem *!*/
+/*    margin-top: 20px;*/
+/*    !* margin-bottom: pole po elemencie *!*/
+/*    margin-bottom: 0;*/
+/*}*/
+
+/*p{*/
+/*    text-align: center;*/
+/*    letter-spacing: 2px;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 25px;*/
+/*}*/
+
+/*.board{*/
+/*    !*  width: w zależności od rozmiarów obrazków, odstępów, marginów *!*/
+/*    width: 600px;*/
+/*    !* margin-left i margin-right: wycentrowanie od ustawionego powyżej - width (600px) *!*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    text-align: center;*/
+/*}*/
+/*.cardActive{*/
+/*    width: 125px;*/
+/*    height: 125px;*/
+/*    !* display: inline-block: wyświetlenie blokami w linijce*!*/
+/*    display: inline-block;*/
+/*    margin: 3px;*/
+/*    background-image: url("images/background.jpg");*/
+/*    !* border: rozmiar, typ i kolor borderu *!*/
+/*    border: 3px solid #f6d915;*/
+/*    border-radius: 6px;*/
+/*    !* typ kursoru (zwykła strałka) *!*/
+/*    cursor: default;*/
+/*    !* opacity: poziom krycia*!*/
+/*    !*opacity: 70%;*!*/
+/*    filter: brightness(100%);*/
+/*    !* transition: wszystko w card (nie tylko border), 3 sekundy, przy najechaniu i wyjechaniu*!*/
+/*    transition: all .3s ease-in-out;*/
+/*}*/
+/*.card{*/
+/*    width: 125px;*/
+/*    height: 125px;*/
+/*    !* display: inline-block: wyświetlenie blokami w linijce*!*/
+/*    display: inline-block;*/
+/*    margin: 3px;*/
+/*    background-image: url("images/background.jpg");*/
+/*    !* border: rozmiar, typ i kolor borderu *!*/
+/*    border: 3px solid #181604;*/
+/*    border-radius: 6px;*/
+/*    !* typ kursoru (łapka) *!*/
+/*    cursor: pointer;*/
+/*    !* opacity: poziom krycia*!*/
+/*    !*opacity: 70%;*!*/
+/*    filter: brightness(90%);*/
+/*    !* transition: wszystko w card (nie tylko border), 3 sekundy, przy najechaniu i wyjechaniu*!*/
+/*    transition: all .3s ease-in-out;*/
+/*}*/
+
+/*.card:hover{*/
+/*    border: 3px solid #f6d915;*/
+/*    !*opacity: 100%;*!*/
+/*    filter: brightness(100%);*/
+/*}*/
+
+
+
+/*.score{*/
+/*    margin-top: 5px;*/
+/*    letter-spacing: 2px;*/
+/*}*/
+

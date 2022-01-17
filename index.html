@@ -3,93 +3,36 @@
 <head>
     <title>Javascript Game</title>
     <meta charset="UTF-8">
-    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&amp:subset=latin-ext" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="../game.js" defer></script>
 </head>
+
 <body>
+<header>
+    <h1>World Memory Game</h1>
+    <p><a href="https://earth.google.com/" target="_blank">You can play and plan your vacations</a></p>
+    <div class="board" id="board">
+        <section class="memory-game" id="section"></section>
 
-    <header>
-        <h1>World Memory Game</h1>
-        <p><a href="https://earth.google.com/web/@38.8894838,-77.0352791,12.17418494a,800.51775635d,35y,0h,45t,0r/data=ClYaVBJOCiUweDg5YjdiN2ExYmUwYzJlN2Y6MHhlOTczNDY4MjhlZDBiZmI4GTGp65racUNAId4uRQNCQlPAKhNXYXNoaW5ndG9uIE1vbnVtZW50GAIgASgC" target="_blank" style="text-decoration: none; color: white"  >You can play and plan your vacations</a></p>
-    <header>
+    <article>
+        <a href="country.html">
+            <button>Play!</button>
+        </a><br>
+        <a href="constellations.html">
+            <button>Rules</button>
+        </a><br>
+        <a href="triangles.html">
+            <button>Ranking</button>
+        </a><br>
+    </article>
 
-        <section class="memory-game">
-            <div class="memory-card" data-framework="Australia">
-                <img class="front-face" src="images/australia.png" alt="State Australia"/>
-                <img class="back-face" src="images/tył 2.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Brazil">
-                <img class="front-face" src="images/brazylia.png" alt="State Brazil"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="China">
-                <img class="front-face" src="images/chiny.png" alt="State China"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="France">
-                <img class="front-face" src="images/francja.png" alt="State France"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Germany">
-                <img class="front-face" src="images/niemcy.png" alt="State Germany"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="USA">
-                <img class="front-face" src="images/usa.png" alt="State USA"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="GB">
-                <img class="front-face" src="images/wielka brytania.png" alt="State GB "/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Italy">
-                <img class="front-face" src="images/wlochy.png" alt="State Italy "/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Peru">
-                <img class="front-face" src="images/peru.png" alt="State Peru "/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Australia">
-                <img class="front-face" src="images/pl_australia.png" alt="Monument Australia"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Brazil">
-                <img class="front-face" src="images/pl_brazylia.png" alt="Monument Brazil"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="China">
-                <img class="front-face" src="images/pl_chiny.png" alt="Monument China"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="France">
-                <img class="front-face" src="images/pl_francja.png" alt="Moument France"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="France">
-                <img class="front-face" src="images/pl_niemcy.png" alt="Monument Germany"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="USA">
-                <img class="front-face" src="images/pl_usa_2.png" alt="Monument USA"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Italy">
-                <img class="front-face" src="images/wlochy.png" alt="State Italy "/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="Peru">
-                <img class="front-face" src="images/pl_peru.png" alt="Monument Peru"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-            <div class="memory-card" data-framework="GB">
-                <img class="front-face" src="images/pl_brytania.png" alt="Monument GB"/>
-                <img class="back-face" src="images/tyl.png" alt="background"/>
-            </div>
-                <div class="score">Turn counter: 0</div>
-        </section>
-<script src="game.js"></script>
+    </div>
+    <div id="counter"></div>
+    <div style="text-align: center; letter-spacing: 4px">
+        <h2><span id="minutes"></span><span id="seconds"></span></h2>
+    </div>
+</header>
 </body>
 </html>
